@@ -2,6 +2,8 @@ const path = require('path') //Optional path is a core npm module
 const express = require('express')
 const hbs = require('hbs')
 const app = express()
+const port = process.env.PORT || 3000 //HEROKU port setup 1st part or 3000 to run locally
+
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
@@ -102,6 +104,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-        console.log('Server is up on PORT 3000')
+app.listen(port, () => {
+        console.log('Server is up on PORT ' + port)
     }) //Asyncronous

@@ -8,13 +8,11 @@ messageTwo.textContent = 'Loading..'
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault() //prevent the browser to refresh after value is entered and not allow the server to render a new page
-
+    const location = search.value
     messageOne.textContent = 'Loading'
     messageTwo.textContent = ''
 
-    const location = search.value
-
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 messageOne.textContent = data.error
