@@ -11,7 +11,7 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             callback(undefined, response.body.current.weather_descriptions[0] +
                 ". It is currently " + response.body.current.temperature + " degress out. But feels like " +
-                response.body.current.feelslike + " degrees out." + " The local time is " + response.body.location.localtime)
+                response.body.current.feelslike + " degrees out." + "The local time is " + response.body.location.localtime)
         } //when we deconstruct then we remove response. before accessing the data
     })
 }
